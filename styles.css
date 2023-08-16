@@ -1,0 +1,50 @@
+
+.d-flex {
+    gap: 1vw;
+}
+
+
+table thead tr {
+    background-color: rgb(197, 57, 57);
+}
+
+table tbody tr {
+    background-color: rgb(53, 46, 46);
+}
+
+
+.page {
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: left;
+    height: 50px;
+    border-bottom: 2px solid rgb(197, 57, 57);
+}
+
+.page div {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0 1vw;
+}
+
+#verificacao {
+    border-radius: 6px 0 0 0;
+}
+
+#modal {
+    left: 35%;
+    top: 5%;
+}
+
+#modal form input {
+    height: 1.5vw;
+}
+
+#modal form .label-textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

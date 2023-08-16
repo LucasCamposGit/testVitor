@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body class="bg-dark ">
+    <div class="container">
+        
+        <h1 class="text-light"><span class="text-danger">.</span>Verificações financeiro</h1>
+
+        <div class="container p-0 bg-secondary rounded">
+
+            <div class="page">
+                <div id="verificacao">verificacao</div>
+                <div id="questionamento">questionamento</div>
+            </div>
+
+            <div class="d-flex flex-column p-2">
+                <h4 class="text-light"><span class="text-danger h1">.</span>filtros</h4>
+
+                <div class="d-flex justify-content-around" id="selectors">
+                </div>
+      
+            </div>
+
+            <button id="novo-questionamento" class="ml-2 my-2 rounded bg-danger border-0 text-light px-2">novo questionamento</button>
+            <button id="resposta" class="ml-2 my-2 rounded bg-danger border-0 text-light px-2">resposta</button>
+
+            <div class="container p-2">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Assessor</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Corretora</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Ativo</th>
+                            <th scope="col">Receita ideal</th>
+                            <th scope="col">Receita atual</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                
+                    </tbody>
+                </table>  
+            </div>
+
+     
+        </div>
+
+    </div>    
+
+   
+    <div id="modal" class="modal position-absolute bg-dark border rounded container text-center w-auto h-auto ">
+        <form id="form" action="http://localhost/night/" method="post" class="d-flex flex-column align-content-center justify-content-center p-5 py-1">
+            <h4 class="text-light text-left h5"><span class="text-danger">.</span>questionamento</h4>
+
+            <label class="d-flex m-0 justify-content-start" for="">
+                <span class="w-25 text-light text-left">Cliente</span> <input name="cliente" class="rounded border-0" type="text">
+            </label>
+            <label class="d-flex m-0 justify-content-start" for="">
+                <span class="w-25 text-light text-left">Produto</span> <input name="produto" class="rounded border-0" type="text">
+            </label>
+            <label class="d-flex m-0 justify-content-start" for="">
+                <span class="w-25 text-light text-left">Receita</span> <input name="receita" class="rounded border-0" type="text">
+            </label>
+
+            <label class="label-textarea" for="">
+                <textarea class="rounded" name="textarea" id="" cols="40" rows="2"></textarea>
+            </label>
+
+            <label class="label-textarea" for="">
+                <span class="text-light">comentario:</span>
+                <textarea class="rounded" name="comentario" id="" cols="40" rows="2"></textarea>
+            </label>
+
+            <label class="d-flex" for="">
+                <span class="text-light">status</span>: <input name="status[]" type="checkbox" value="yes">
+            </label>
+
+            <label class="label-textarea" for="">
+                <span class="text-light">Resposta:</span> 
+                <textarea class="rounded" name="resposta" id="" cols="40" rows="2"></textarea>
+            </label>
+
+            <div class="d-flex justify-content-end">
+                <button id="fechar-modal" type="button" class="text-light bg-dark border-0">Fechar</button>
+                <button id="salvar"  class="bg-danger text-light border-0">Salvar</button>
+            </div>
+        </form>
+    </div>
+
+
+
+        
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./index.js"></script>
+</body>
+</html>
