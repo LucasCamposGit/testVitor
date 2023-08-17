@@ -10,12 +10,11 @@
 
 
 </head>
-<body class="bg-dark ">
-    <div class="container">
-        
+<body>
+    <div class="container-app">
         <h1 class="text-light"><span class="text-danger">.</span>Verificações financeiro</h1>
 
-        <div class="container p-0 bg-secondary rounded">
+        <div class="container-table p-0 py-4 rounded">
 
             <div class="page">
                 <div id="verificacao">verificacao</div>
@@ -23,18 +22,18 @@
             </div>
 
             <div class="d-flex flex-column p-2">
-                <h4 class="text-light"><span class="text-danger h1">.</span>filtros</h4>
+                <h4 class="text-light px-4"><span class="text-danger h1">.</span>filtros</h4>
 
                 <div class="d-flex justify-content-around" id="selectors">
                 </div>
       
             </div>
 
-            <button id="novo-questionamento" class="ml-2 my-2 rounded bg-danger border-0 text-light px-2">novo questionamento</button>
-            <button id="resposta" class="ml-2 my-2 rounded bg-danger border-0 text-light px-2">resposta</button>
+            <button id="novo-questionamento" class="my-2 rounded bg-danger border-0 text-light px-2">novo questionamento</button>
+            <button id="resposta" class="my-2 rounded bg-danger border-0 text-light px-2">resposta</button>
 
-            <div class="container p-2">
-                <table class="table table-dark">
+            <div class="container d-flex justify-content-center p-2">
+                <table>
                     <thead>
                         <tr>
                             <th scope="col">Assessor</th>
@@ -48,6 +47,8 @@
                     </thead>
                     <tbody id="tbody">
                 
+
+
                     </tbody>
                 </table>  
             </div>
@@ -58,36 +59,44 @@
     </div>    
 
    
-    <div id="modal" class="modal position-absolute bg-dark border rounded container text-center w-auto h-auto ">
-        <form id="form" action="http://localhost/night/" method="post" class="d-flex flex-column align-content-center justify-content-center p-5 py-1">
+
+    <div id="modal" class="rounded text-center">
+        <form id="form" action="http://localhost/night/" method="post" class="d-flex  flex-column align-content-center justify-content-center p-5 py-1">
             <h4 class="text-light text-left h5"><span class="text-danger">.</span>questionamento</h4>
 
-            <label class="d-flex m-0 justify-content-start" for="">
-                <span class="w-25 text-light text-left">Cliente</span> <input name="cliente" class="rounded border-0" type="text">
+            <label class="d-flex justify-content-start" for="">
+                <span class="w-25 text-light text-left">Cliente</span> 
+                <input name="cliente" class=" border-0" id="cliente" type="text">
             </label>
-            <label class="d-flex m-0 justify-content-start" for="">
-                <span class="w-25 text-light text-left">Produto</span> <input name="produto" class="rounded border-0" type="text">
+            <label class="d-flex justify-content-start" for="">
+                <span class="w-25 text-light text-left">Produto</span> 
+                <input name="produto" class=" border-0" id="produto" type="text">
             </label>
-            <label class="d-flex m-0 justify-content-start" for="">
-                <span class="w-25 text-light text-left">Receita</span> <input name="receita" class="rounded border-0" type="text">
+            <label class="d-flex justify-content-start" for="">
+                <span class="w-25 text-light text-left">Receita</span> 
+                <input name="receita" class=" border-0" id="receita" type="text">
             </label>
 
             <label class="label-textarea" for="">
-                <textarea class="rounded" name="textarea" id="" cols="40" rows="2"></textarea>
+                <textarea  name="textarea" id="" cols="35" rows="2"></textarea>
             </label>
 
             <label class="label-textarea" for="">
                 <span class="text-light">comentario:</span>
-                <textarea class="rounded" name="comentario" id="" cols="40" rows="2"></textarea>
+                <textarea  name="comentario" id="comentario" cols="35" rows="2"></textarea>
             </label>
 
             <label class="d-flex" for="">
-                <span class="text-light">status</span>: <input name="status[]" type="checkbox" value="yes">
+                <span class="text-light">status</span>: 
+                <span class="aberto-fechado">
+                    <input name="status[]" type="checkbox" value="yes">
+                    aberto
+                </span>
             </label>
 
             <label class="label-textarea" for="">
                 <span class="text-light">Resposta:</span> 
-                <textarea class="rounded" name="resposta" id="" cols="40" rows="2"></textarea>
+                <textarea name="resposta" id="" cols="35" rows="2"></textarea>
             </label>
 
             <div class="d-flex justify-content-end">
@@ -96,9 +105,6 @@
             </div>
         </form>
     </div>
-
-
-
         
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>

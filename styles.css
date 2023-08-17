@@ -1,17 +1,49 @@
-
-.d-flex {
-    gap: 1vw;
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #171716;
 }
 
+.container-app {
+    padding: 0 1vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-table {
+    background-color: #262626;
+    width: 90vw;
+    align-self: center;
+}
+
+table {
+    width: 95%;
+}
 
 table thead tr {
     background-color: rgb(197, 57, 57);
 }
 
 table tbody tr {
-    background-color: rgb(53, 46, 46);
+    background-color: #000;
 }
 
+table tbody tr:hover {
+    background-color: rgb(197, 57, 57);
+    cursor: pointer;
+}
+
+table td, table th {
+    border: none;
+    padding: 1vw;
+    color: #fff;
+    width: 2vw;
+    text-align: center;
+}
+
+table tr#total td {
+    padding: 0.2vw;
+}
 
 .page {
     border-radius: 4px 4px 0 0;
@@ -30,21 +62,73 @@ table tbody tr {
     padding: 0 1vw;
 }
 
-#verificacao {
+button {
+    margin-left: 2.6vw;
+}
+
+select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14vw;
+}
+
+#verificacao, #questionamento {
     border-radius: 6px 0 0 0;
 }
 
 #modal {
-    left: 35%;
-    top: 5%;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000081;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal form {
+    width: 30vw;
+    background-color: #272726;
+}
+
+#modal form label{
+    margin-top: 0.5vw;
+    align-items: center;
 }
 
 #modal form input {
-    height: 1.5vw;
+    font-size: 1vw;
+    height: 1.3vw;
+    border-radius: 2vw;
+    padding: 0 1vw;
+}
+
+#modal form textarea {
+    border-radius: 0.6vw;
+    padding: 0 1vw;
+    width: 22vw;
+}
+
+#modal form h4{
+    transform: translate(-2vw, -2vw);
 }
 
 #modal form .label-textarea {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+#modal .aberto-fechado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6vw;
+    width: 6vw;
+    height: 1.2vw;
+    margin-left: 1vw;
+    background-color: white;
+    border-radius: 1vw;
 }

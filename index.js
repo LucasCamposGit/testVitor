@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         $.each(data, function (index, item) {
             tablebody.append(
-                '<tr>' +
+                '<tr onclick="getClientQuestion(this)">' +
                 '<td>' + item.assessor + '</td>' +
                 '<td>' + item.cliente + '</td>' +
                 '<td>' + item.corretora + '</td>' +
@@ -20,7 +20,20 @@ $(document).ready(function () {
                 '</tr>'
                 );
          })
-    
+         
+         tablebody.append(
+            '<tr id="total" class="bg-danger">' +
+            '<td > total </td>' + 
+            '<td >  </td>' + 
+            '<td >  </td>' + 
+            '<td >  </td>' + 
+            '<td >  </td>' +
+            '<td > total </td>' + 
+            '<td > total </td>' + 
+
+            '</tr>'
+         )
+
 
         createSelector('assessor', 0, data);
         createSelector('cliente', 1, data);
@@ -53,12 +66,48 @@ function createSelector(id, orderNumber, data) {
 
 }
 
+function getClientQuestion (el) {
+    let clientClicked = el['children'][1]['innerText'];
+    
+    fetch("http://localhost/night/queryClient.php")
+    .then(res => res.json())
+    .then(questionamentos => {
+        
+        let modal = document.querySelector("#modal");
+        let cliente = modal.querySelector("#cliente");
+        let produto = modal.querySelector("#produto");
+        let receita = modal.querySelector("#receita");
+        let comentario = modal.querySelector("#comentario");
+        
+        modal.style.display = "flex";
+
+        for(let questionamento of questionamentos) {
+
+            if(questionamento['cliente'] === clientClicked){
+                cliente.value = questionamento['cliente'];
+                produto.value = questionamento['produto'];
+                receita.value = questionamento['receita'];
+                comentario.value = questionamento['comentario'];
+            }
+            else {
+                cliente.value = "";
+                produto.value = "";
+                receita.value = "";
+                comentario.value = "";
+            }
+
+        }
+    });
+
+}
+
 function filterTable(columnIndex, value) {
     var tablebody, tr, td, i;
     tablebody = document.querySelector("tbody");
 
     tr = tablebody.getElementsByTagName("tr");
-  
+
+
     for (i = 0; i < tr.length; i++) {
       td = tr[i].children[columnIndex];
 
@@ -70,7 +119,8 @@ function filterTable(columnIndex, value) {
         }
       }
     }
-  }
+}
+
 
 
 $(document).ready(function () {
@@ -82,9 +132,9 @@ $(document).ready(function () {
     let modal = $("#modal");
     let fechar_modal = $("#fechar-modal");
 
-
     verificacao.css("background-color","rgb(197, 57, 57)");
     resposta.css("display", "none");
+    modal.css("display", "none");
 
     verificacao.click(function () {
         verificacao.css("background-color","rgb(197, 57, 57)");
@@ -104,11 +154,11 @@ $(document).ready(function () {
 
 
     novo_questionamento.click(function() {
-        modal.css("display", "block")
+        modal.css("display", "flex")
     });
 
     resposta.click(function() {
-        modal.css("display", "block")
+        modal.css("display", "flex")
     })
 
     salvar.click(function() {
@@ -120,6 +170,8 @@ $(document).ready(function () {
         modal.css("display", "none");
     })
 });
+
+
 
 // $(document).ready(function () {
 //     let form  = $('#form');

@@ -9,7 +9,7 @@ header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === "GET") {
-    
+
     $stmt = $pdo->prepare("SELECT * FROM financeiro");
     $stmt->execute();
     $data = $stmt->fetchAll();
@@ -42,4 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $stmt->execute();
 
 }
+
+?>
 

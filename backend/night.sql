@@ -16,13 +16,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Banco de dados: night
 --
 
 -- --------------------------------------------------------
-
 --
 -- Estrutura da tabela financeiro
 --
@@ -33,9 +31,9 @@ CREATE TABLE financeiro (
   corretora varchar(225) NOT NULL,
   produto varchar(225) NOT NULL,
   ativo varchar(225) NOT NULL,
-  receita_ideal double NOT NULL,
-  receita_atual double NOT NULL
-) ;
+  receita_ideal float NOT NULL,
+  receita_atual float NOT NULL
+);
 
 --
 -- Extraindo dados da tabela financeiro
@@ -56,9 +54,9 @@ CREATE TABLE questionamento (
   produto varchar(255) NOT NULL,
   receita varchar(255) NOT NULL,
   comentario varchar(1000) NOT NULL,
-  status tinyint(1) DEFAULT 0,
+  status bool DEFAULT false,
   resposta varchar(1000) NOT NULL
-) ;
+);
 
 --
 -- Extraindo dados da tabela questionamento
