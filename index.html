@@ -29,6 +29,25 @@
       
             </div>
 
+            <div class="container-info">
+                <div>
+                    <span>Linhas</span>
+                    <div>80</div>
+                </div>
+                <div>
+                    <span>financeiro</span>
+                    <div>R$ 2.000.000,95</div>
+                </div>
+                <div>
+                    <span>AAIs Afetados</span>
+                    <div>20</div>
+                </div>
+                <div>
+                    <span>Corretoras</span>
+                    <div>3</div>
+                </div>
+            </div>
+
             <button id="novo-questionamento" class="my-2 rounded bg-danger border-0 text-light px-2">novo questionamento</button>
             <button id="resposta" class="my-2 rounded bg-danger border-0 text-light px-2">resposta</button>
 
@@ -46,19 +65,11 @@
                         </tr>
                     </thead>
                     <tbody id="tbody">
-                
-
-
                     </tbody>
                 </table>  
             </div>
-
-     
         </div>
-
     </div>    
-
-   
 
     <div id="modal" class="rounded text-center">
         <form id="form" action="http://localhost/night/" method="post" class="d-flex  flex-column align-content-center justify-content-center p-5 py-1">
@@ -89,7 +100,7 @@
             <label class="d-flex" for="">
                 <span class="text-light">status</span>: 
                 <span class="aberto-fechado">
-                    <input name="status[]" type="checkbox" value="yes">
+                    <span class="circle"></span>
                     aberto
                 </span>
             </label>

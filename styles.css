@@ -16,6 +16,33 @@ body {
     align-self: center;
 }
 
+.container-info {
+    width: 100%;
+    display: flex;
+    padding: 0 2vw;
+    color: #fff;
+    margin: 2vw 0;
+    gap: 5vw;
+    color: #ffffffde;
+}
+
+.container-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-info div div {
+    background-color: #000000ce;
+    border-radius: 0.5vw;
+    width: 17vw;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 2vw;
+    color: red;
+}
+
 table {
     width: 95%;
 }
@@ -131,4 +158,12 @@ select {
     margin-left: 1vw;
     background-color: white;
     border-radius: 1vw;
+}
+
+#modal .aberto-fechado .circle {
+    border-radius: 50%;
+    width: 1vw;
+    height: 1vw;
+    background-color: green;
+
 }
